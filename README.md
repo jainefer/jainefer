@@ -5,8 +5,7 @@
 - **Express.js**, **SpringBoot**와 같은 프레임워크와 **AWS**, **Docker**를 이용해 서버를 구축하고, API 작성 및 배포한 경험이 있습니다.  
 - 여러 기술을 단순히 도구로 보고 사용하는 것이 아닌, 그 기술을 이해하고 활용할 수 있는 개발자가 되는 것이 목표입니다.  
 ---
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fjainefer&count_bg=%2385CDDF&title_bg=%2376A7F5&icon=&icon_color=%23E7E7E7&title=GitHub&edge_flat=false)](https://hits.seeyoufarm.com)
----
+
 
 ## 🛠️ Tech Stacks  
 
