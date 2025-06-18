@@ -27,6 +27,7 @@
 ## 🧑‍💻 Contact me  
 
 [![Gmail](https://img.shields.io/badge/Gmail-EA4335?style=flat&logo=Gmail&logoColor=white)](mailto:jy5849@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/%EC%A4%80%EC%9A%A9-%EC%9E%A5-684435337/)
 
 
 ## 📊 GitHub Stats  
