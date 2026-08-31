@@ -1,0 +1,57 @@
+name: Refresh stats cards
+
+on:
+  schedule:
+    - cron: "0 21 * * *"   # 매일 06:00 KST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch cards
+        env:
+          BASE: ${{ secrets.STATS_BASE }}
+        run: |
+          set -euo pipefail
+
+          fetch() {
+            local url="$1" out="$2" needle="$3"
+            for i in 1 2 3 4 5; do
+              if curl -sS --max-time 25 "$url" -o "$out.tmp" \
+                 && grep -q "$needle" "$out.tmp" \
+                 && ! grep -q "Something went wrong" "$out.tmp"; then
+                mv "$out.tmp" "$out"
+                echo "ok: $out ($(wc -c <"$out") bytes)"
+                return 0
+              fi
+              echo "retry $i: $out"
+              sleep $((i * 5))
+            done
+            echo "::error::failed to fetch $out — keeping previous version"
+            rm -f "$out.tmp"
+            return 1
+          }
+
+          fetch "$BASE/api?username=jainefer&show_icons=true&number_format=long" \
+                assets/stats.svg 'data-testid="commits"'
+
+          fetch "$BASE/api/top-langs/?username=jainefer&layout=compact&size_weight=0.5&count_weight=0.5&langs_count=8" \
+                assets/top-langs.svg 'Most Used Languages'
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- assets; then
+            echo "no change"
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets
+          git commit -m "chore: refresh stats cards [skip ci]"
+          git push

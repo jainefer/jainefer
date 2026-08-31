@@ -32,8 +32,8 @@
 
 ## 📊 GitHub Stats  
 
-[![Jainefer's GitHub stats](https://github-stats-extended.vercel.app/api?username=jainefer&count_private=true&show_icons=true)](https://github.com/anuraghazra/github-readme-stats)  [![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=jy5849)](https://solved.ac/jy5849/)
-![Top Langs](https://github-stats-extended.vercel.app/api/top-langs/?username=jainefer&layout=compact)
+[![Jainefer's GitHub stats](./assets/stats.svg)](https://github.com/anuraghazra/github-readme-stats)  [![Solved.ac Profile](https://mazassumnida.wtf/api/v2/generate_badge?boj=jy5849)](https://solved.ac/jy5849/)
+![Top Langs](./assets/top-langs.svg)
 [![Git Ranker](https://www.git-ranker.com/api/v1/badges/U_kgDOBtxB3A)](https://www.git-ranker.com)
 
 
